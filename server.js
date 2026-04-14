@@ -88,10 +88,6 @@ app.get('/api/alerts', async (req, res) => {
 
 const axios = require('axios'); // Ensure axios is required at the top
 
-// --- Telegram Credentials (Hardcoded from your config) ---
-const TELEGRAM_TOKEN = "8605818467:AAEEzLCiAJ2sMPhf3MD7rvmS0VPNIIgvMQs";
-const TELEGRAM_CHAT_ID = "1354615948";
-
 app.post('/api/dispatch', async (req, res) => {
     const { dept, level, trigger } = req.body;
     
@@ -104,10 +100,10 @@ app.post('/api/dispatch', async (req, res) => {
 
     try {
         // Send to Telegram API
-        const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+        const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`;
         
         await axios.post(telegramUrl, {
-            chat_id: TELEGRAM_CHAT_ID,
+            chat_id: process.env.TELEGRAM_CHAT_ID,
             text: message,
             parse_mode: "Markdown"
         });
