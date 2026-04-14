@@ -25,5 +25,5 @@ The central command and control server for the **Smart Fire & Smoke Detection Sy
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/fire-detector-server.git](https://github.com/your-username/fire-detector-server.git)
-   cd fire-detector-server
+   git clone https://github.com/HarshM1010/Smart-Fire-Detector-ESP8266-backend
+   cd Smart-Fire-Detector-ESP8266-backend
